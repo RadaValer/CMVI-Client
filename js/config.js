@@ -4,5 +4,5 @@
 window.CMV_CONFIG = {
   apiUrl: /^(localhost|127\.0\.0\.1|\[::1\]|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+)$/.test(location.hostname)
     ? ''
-    : 'https://cmv-server.onrender.com'
+    : 'https://cmvi-server.onrender.com'
 };
