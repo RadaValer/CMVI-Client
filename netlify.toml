@@ -1,0 +1,27 @@
+# Netlify: site static, fără build. Folderul publicat e chiar acest folder (client).
+[build]
+  publish = "."
+  command = ""
+
+# panoul de administrare nu apare în motoarele de căutare
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# fișierele JS/CSS se schimbă la fiecare publicare: browserul verifică mereu dacă au versiune nouă
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
